@@ -20,7 +20,7 @@ import { Router, RouterLink } from '@angular/router';
 import { Microscopio } from '../../model/microscopio';
 import { MicroscopioService } from '../../servicios/microscopio';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogo } from './confirm.dialogo/confirm.dialogo';
+import { ConfirmDialogo } from '../pilco-eliminar/confirm.dialogo/confirm.dialogo';
 
 @Component({
   selector: 'app-pilco-listar',
@@ -39,8 +39,6 @@ import { ConfirmDialogo } from './confirm.dialogo/confirm.dialogo';
     MatPaginator,
     DatePipe,
     MatSortHeader,
-    MatButton,
-    RouterLink,
   ],
   templateUrl: './pilco-listar.html',
   styleUrl: './pilco-listar.css',
