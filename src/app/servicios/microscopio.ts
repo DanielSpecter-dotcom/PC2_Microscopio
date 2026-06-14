@@ -15,9 +15,6 @@ export class MicroscopioService {
   list(): Observable<any> {
     return this.hhtpClient.get(environment.apiURL + '/microscopios');
   }
-  listId(id: number): Observable<Microscopio> {
-    return this.hhtpClient.get<Microscopio>(environment.apiURL + '/microscopio/' + id);
-  }
   insert(microscopio: Microscopio): Observable<any> {
     console.log(microscopio);
     return this.hhtpClient.post(environment.apiURL + '/microscopio', microscopio);

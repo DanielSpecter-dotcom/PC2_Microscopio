@@ -11,7 +11,7 @@ import {
 import { MatButton } from '@angular/material/button';
 import { MatNativeDateModule, MatOption } from '@angular/material/core';
 import { MicroscopioService } from '../../servicios/microscopio';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Microscopio } from '../../model/microscopio';
 import { MatSelect } from '@angular/material/select';
 
@@ -44,9 +44,6 @@ export class PilcoRegistrar {
   fb: FormBuilder = inject(FormBuilder);
   microscopioService: MicroscopioService = inject(MicroscopioService);
   router: Router = inject(Router);
-  edicion: boolean = false;
-  route: ActivatedRoute = inject(ActivatedRoute);
-  id: number = 0;
   marcas: string[] = ['OLYMPUS', 'NIKON', 'LEICA', 'ZEISS', 'CARL_ZEISS'];
   constructor() {
     this.microscopioForm = this.fb.group({
@@ -70,29 +67,7 @@ export class PilcoRegistrar {
     return fecha < limite ? null : { fechaInvalida: true };
   }
 
-  ngOnInit() {
-    this.route.params.subscribe((data) => {
-      this.id = data['id'];
-      console.log('ID recibido;', this.id);
-      this.edicion = data['id'] != null;
-      this.cargarForm();
-    });
-  }
-  private cargarForm() {
-    if (this.edicion) {
-      this.microscopioService.listId(this.id).subscribe((data: Microscopio) => {
-        console.log(data);
-        this.microscopioForm.patchValue({
-          id: data.id,
-          codigo: data.codigo,
-          marca: data.marca,
-          precio: data.precio,
-          fechaFabricacion: data.fechaFabricacion,
-          estado: data.estado,
-        });
-      });
-    }
-  }
+  ngOnInit() {}
   onSubmit() {
     if (this.microscopioForm.valid) {
       let microscopio = new Microscopio();
