@@ -1,0 +1,14 @@
+.example-card{
+  margin: 0 auto;
+  width: 600px;
+  background-color: pink;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+button.boton-rosado {
+  background-color: pink;
+  color: black;
+}

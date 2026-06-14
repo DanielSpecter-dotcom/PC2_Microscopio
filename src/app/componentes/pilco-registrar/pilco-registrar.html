@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+  <mat-card-title> Formulario de Microscopio </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="microscopioForm" class="form-container" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Codigo</mat-label>
+        <input  matInput  formControlName="codigo" placeholder="Ingrese el codigo" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Marca</mat-label>
+        <mat-select formControlName="marca" required>
+          @for (marca of marcas; track marca) {
+            <mat-option [value]="marca">
+              {{ marca }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Precio</mat-label>
+        <input  matInput  formControlName="precio" placeholder="Ingrese el precio" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+
+        <mat-label>Fecha Fabricacion</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaFabricacion" placeholder=“Fecha“/>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="estado" placeholder="Ingrese true or false" />
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button class="boton-rosado">Registrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
