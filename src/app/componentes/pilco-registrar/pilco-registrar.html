@@ -26,15 +26,18 @@
 
         <mat-label>Fecha Fabricacion</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="fechaFabricacion" placeholder=“Fecha“/>
-        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Estado</mat-label>
-        <input matInput formControlName="estado" placeholder="Ingrese true or false" />
-      </mat-form-field>
+      <div class="estado-container">
+        <label class="estado-label">Estado:</label>
+        <mat-radio-group formControlName="estado" class="estado-radio-group">
+          <mat-radio-button [value]="true">Activo</mat-radio-button>
+          <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+        </mat-radio-group>
+      </div>
 
       <button type="submit" mat-raised-button class="boton-rosado">Registrar</button>
     </form>

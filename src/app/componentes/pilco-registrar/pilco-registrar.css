@@ -12,3 +12,22 @@ button.boton-rosado {
   background-color: pink;
   color: black;
 }
+
+.estado-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 8px 0;
+}
+
+.estado-label {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+}
+
+.estado-radio-group {
+  display: flex;
+  gap: 16px;
+}

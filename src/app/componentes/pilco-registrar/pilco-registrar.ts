@@ -14,6 +14,7 @@ import { MicroscopioService } from '../../servicios/microscopio';
 import { Router } from '@angular/router';
 import { Microscopio } from '../../model/microscopio';
 import { MatSelect } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-pilco-registrar',
@@ -35,6 +36,7 @@ import { MatSelect } from '@angular/material/select';
     MatInput,
     MatSelect,
     MatOption,
+    MatRadioModule,
   ],
   templateUrl: './pilco-registrar.html',
   styleUrl: './pilco-registrar.css',
